@@ -11,9 +11,5 @@ public:
         numerals.insert({"I", 1});
         numerals.insert({"V", 5});
         numerals.insert({"X", 10});
-        numerals.insert({"L", 50});
-        numerals.insert({"C", 100});
-        numerals.insert({"D", 500});
-        numerals.insert({"M", 1000});
     }
 };
