@@ -1,15 +1,20 @@
-#include <map>
-#include <iostream>
 #include <string>
-#include <unordered_map>
 
 class Solution {
 public:
-    std::unordered_map<std::string, int> numerals;
-
     int romanToInt(string s) {
-        numerals.insert({"I", 1});
-        numerals.insert({"V", 5});
-        numerals.insert({"X", 10});
+        char string_split[s.size()]; 
     }
 };
+
+/*
+Pseudo:
+1. Create a hash map of all the 
+romans and corresponding values
+2. split up the insput string into 
+characters
+3. iterate over the splitte input and 
+increment the output value by comparing
+the symbol to the key:value in the hashmap
+4. take the special cases into account by 
+conditional statements
