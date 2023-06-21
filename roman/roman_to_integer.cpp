@@ -1,47 +1,52 @@
 #include <string>
-#include <unordered_map>
 
 class Solution {
 public:
-    int romanToInt(string s) {
+    int romanToInt(std::string s) {
 
         int result = 0;
 
-        // exceptions
-        std::string four = "IV";
-        std::string nine = "IX";
-        std::string forty = "XL";
-        std::string ninety = "XC";
-        std::string four_h = "CD";
-        std::string nine_h = "CM";
-
-        if (s == four) {
-            return 4;
-        } else if (s == nine) {
-            return 9;
-        } else if (s == forty) {
-            return 40;
-        } else if (s == ninety) {
-            return 90;
-        } else if (s == four_h) {
-            return 400;
-        } else if (s == nine_h) {
-            return 900;
-        }
-
         for(int i = 0; i < s.size(); i ++) {
+            char concat[2] ;
+            concat[0] = s[0];
+            concat[1] = s[1]; 
+
             if (s[i] == 'I') {
-                result ++;
+                if (specialCheck(concat)){
+                    result += specialNumber(concat);
+                } else {
+                    result ++;
+                }
             } else if (s[i] == 'V') {
-                result += 5;
+                if (specialCheck(concat)){
+                    result += specialNumber(concat);
+                } else {
+                    result += 5;
+                }
             } else if (s[i] == 'X') {
-                result += 10;
+                if (specialCheck(concat)){
+                    result += specialNumber(concat);
+                } else {
+                    result += 10;
+                }
             } else if (s[i] == 'L') {
-                result += 50;
+                if (specialCheck(concat)){
+                    result += specialNumber(concat);
+                } else {
+                    result += 50;
+                }
             } else if (s[i] == 'C') {
-                result += 100;
+                if (specialCheck(concat)){
+                    result += specialNumber(concat);
+                } else {
+                    result += 100;
+                }
             } else if (s[i] == 'D') {
-                result += 500;
+                if (specialCheck(concat)){
+                    result += specialNumber(concat);
+                } else {
+                    result += 500;
+                }
             } else {
                 result += 1000;
             }
@@ -49,16 +54,46 @@ public:
             return result;
         }
 
+        static bool specialCheck(string s){
+            if (s == "IV"
+            || s == "IX"
+            || s == "XL"
+            || s == "XC"
+            || s == "CD"
+            || s == "CM"){
+                return true;
+            } else{
+                return false;
+            }
+        }
+
+        static int specialNumber(string s){
+            if (s == "IV") {
+                return 4;
+            } else if (s == "IX") {
+                return 9;
+            } else if (s == "XL") {
+                return 40;
+            } else if (s == "XC") {
+                return 90;
+            } else if (s == "CD") {
+                return 400;
+            } else if (s == "CM") {
+                return 900;
+        } else {
+            return 1;
+        }
+        }
     };
 
-/*
-Pseudo:
-1. Create a hash map of all the 
-romans and corresponding values
-2. split up the insput string into 
-characters
-3. iterate over the splitte input and 
-increment the output value by comparing
-the symbol to the key:value in the hashmap
-4. take the special cases into account by 
-conditional statements
+
+
+
+
+
+
+
+
+
+
+
