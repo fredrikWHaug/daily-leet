@@ -7,9 +7,9 @@ public:
         int result = 0;
 
         for(int i = 0; i < s.size(); i ++) {
-            char concat[2] ;
-            concat[0] = s[0];
-            concat[1] = s[1]; 
+            std::string concat = "hi";
+            concat[0] = s[i];
+            concat[1] = s[i+1]; 
 
             if (s[i] == 'I') {
                 if (specialCheck(concat)){
@@ -47,8 +47,10 @@ public:
                 } else {
                     result += 500;
                 }
-            } else {
+            } else if (s[i] == 'M'){
                 result += 1000;
+            } else {
+                return 1;
             }
             }
             return result;
