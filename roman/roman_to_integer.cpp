@@ -5,45 +5,44 @@ public:
     int romanToInt(std::string s) {
 
         int result = 0;
-
-        for(int i = 0; i < s.size(); i ++) {
-            std::string concat = "hi";
-            concat[0] = s[i];
-            concat[1] = s[i+1]; 
+        std::string con;
+        for(int i = 0; i < s.size(); ++i) {
+            con[0] = s[i];
+            con[1] = s[i+1]; 
 
             if (s[i] == 'I') {
-                if (specialCheck(concat)){
-                    result += specialNumber(concat);
-                } else {
+                if (specialCheck(con)){
+                    result += specialNumber(con);
+                } else{
                     result ++;
                 }
             } else if (s[i] == 'V') {
-                if (specialCheck(concat)){
-                    result += specialNumber(concat);
+                if (specialCheck(con)){
+                    result += specialNumber(con);
                 } else {
                     result += 5;
                 }
             } else if (s[i] == 'X') {
-                if (specialCheck(concat)){
-                    result += specialNumber(concat);
+                if (specialCheck(con)){
+                    result += specialNumber(con);
                 } else {
                     result += 10;
                 }
             } else if (s[i] == 'L') {
-                if (specialCheck(concat)){
-                    result += specialNumber(concat);
+                if (specialCheck(con)){
+                    result += specialNumber(con);
                 } else {
                     result += 50;
                 }
             } else if (s[i] == 'C') {
-                if (specialCheck(concat)){
-                    result += specialNumber(concat);
+                if (specialCheck(con)){
+                    result += specialNumber(con);
                 } else {
                     result += 100;
                 }
             } else if (s[i] == 'D') {
-                if (specialCheck(concat)){
-                    result += specialNumber(concat);
+                if (specialCheck(con)){
+                    result += specialNumber(con);
                 } else {
                     result += 500;
                 }
@@ -56,8 +55,8 @@ public:
             return result;
         }
 
-        static bool specialCheck(string s){
-            if (s == "IV"
+        static bool specialCheck(std::string s){
+            if (s == "IV" 
             || s == "IX"
             || s == "XL"
             || s == "XC"
@@ -69,7 +68,7 @@ public:
             }
         }
 
-        static int specialNumber(string s){
+        static int specialNumber(std::string s){
             if (s == "IV") {
                 return 4;
             } else if (s == "IX") {
@@ -87,15 +86,3 @@ public:
         }
         }
     };
-
-
-
-
-
-
-
-
-
-
-
-
