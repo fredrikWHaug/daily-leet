@@ -4,6 +4,8 @@ class Solution {
 public:
     int romanToInt(std::string s) {
 
+        Hi git
+
         int result = 0;
         for(int i = 0; i < s.size(); ++i) {
             std::string con;
