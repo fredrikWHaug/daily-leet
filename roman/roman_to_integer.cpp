@@ -3,33 +3,34 @@
 class Solution {
 public:
     int romanToInt(std::string s) {
+
         int result = 0;
-        for(int i = 0; i < s.size(); ++i) {
-            std::string con;
-            con+= s[i];
-            con += s[i+1]; 
-            if(specialCheck(con)){
-                specialNumber(con);
+        for(int i = 0; i < s.size(); i++) {
+            std::string dc;
+            dc+= s[i];
+            dc += s[i+1]; 
+            if(specialCheck(dc)){
+                specialNumber(dc);
                 i++;
             } else {
-                if (s[i] == "I"){
+                if (s[i] == 'I'){
                     result ++;
-                } else if (s[i] == "V"){
+                } else if (s[i] == 'V'){
                     result += 5;
-                } else if (s[i] == "X"){
+                } else if (s[i] == 'X'){
                     result += 10;
-                } else if (s[i] == "L"){
+                } else if (s[i] == 'L'){
                     result += 50;
-                } else if (s[i] == "C"){
+                } else if (s[i] == 'C'){
                     result += 100;
-                } else if (s[i] == "D"){
+                } else if (s[i] == 'D'){
                     result += 500;
-                } else if (s[i] == "M"){
+                } else if (s[i] == 'M'){
                     result += 1000;
                 }
             }
-            return result;
         }
+        return result;
     }
     
     static int specialNumber(std::string s){
@@ -62,4 +63,4 @@ public:
         return false;
     }
     }
-}
+};
