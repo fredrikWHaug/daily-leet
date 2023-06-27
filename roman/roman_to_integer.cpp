@@ -10,7 +10,7 @@ public:
             special_character[0] = s[i];
             special_character[1] = s[i+1];
             if(specialCheck(special_character)){
-                specialNumber(special_character);
+                result += specialNumber(special_character);
                 i++;
             } else {
                 if (s[i] == 'I'){
