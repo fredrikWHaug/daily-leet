@@ -5,12 +5,12 @@ public:
     int romanToInt(std::string s) {
 
         int result = 0;
+        std::string special_character = "hi";
         for(int i = 0; i < s.size(); i++) {
-            std::string dc;
-            dc+= s[i];
-            dc += s[i+1]; 
-            if(specialCheck(dc)){
-                specialNumber(dc);
+            special_character[0] = s[i];
+            special_character[1] = s[i+1];
+            if(specialCheck(special_character)){
+                specialNumber(special_character);
                 i++;
             } else {
                 if (s[i] == 'I'){
