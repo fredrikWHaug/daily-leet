@@ -1,45 +1,25 @@
-#include <iostream>
-#include <vector>
 #include <algorithm>
-
-// this works
-
-class Solution {
-public:
-    bool isPalindrome(int x) {
-
-        std::vector<int> my_list = {1, 2, 3};
-
-        std::reverse(my_list.begin(), my_list.end());
-
-        for (const auto& element : my_list) {
-            std::cout << element << " ";
-        }
-        std::cout << std::endl;
-        return true;
-    }
-};
-
-// here is a way to split an integer into a list of individual characters
-
 #include <iostream>
 #include <vector>
 #include <string>
 
-int main() {
-    int number = 12345;
-    std::string numberString = std::to_string(number);
-    std::vector<char> digits;
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        bool result = true;
+        std::string string_version = std::to_string(x);
+        vector<std::string> string_list;
+        for (char c : string_version) {
+            string_list.push_back(std::string(1, c));
+        }
 
-    for (char c : numberString) {
-        digits.push_back(c);
+        vector<std::string> reversed_list = std::reverse(string_list.begin(), string_list.end());
+
+        for (int i = 0; i < reversed_list.size(); i ++) {
+            if (reversed_list[i] != string_list[i]) {
+                result = false;
+            }
+        }
+        return result;
     }
-
-    // Print the split digits
-    for (char digit : digits) {
-        std::cout << digit << " ";
-    }
-    std::cout << std::endl;
-
-    return 0;
-}
+};
