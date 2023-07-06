@@ -3,15 +3,19 @@
 class Solution {
 public:
     string longestCommonPrefix(vector<string>& strs) {
-        bool empty = false;
         std::string longest_prefix = "";
         for (int i = 0; i < strs.size(); i ++) {
-            std::string prefix = strs[0][i];
-            for (int j = 0; j < strs.size(); i ++) {
-                // see if the first letter of the rest of the words match?
+            char prefix = strs[0][i];
+            std::cout << prefix << std::endl;
+            for (int j = 0; j < strs.size(); j ++) {
+                std::cout << strs[j][j] << std::endl;
+                if (strs[1+i][j] != prefix) {
+                    return "";
+                } else {
+                    longest_prefix += prefix;
+                }
             }
         }
-
-
+    return longest_prefix;
     }
 };
