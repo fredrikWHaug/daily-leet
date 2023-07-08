@@ -3,21 +3,23 @@
 class Solution {
 public:
     string longestCommonPrefix(vector<string>& strs) {
-        char first_letter = strs[0][0];
-        for (int i = 0; i < strs.size(); i ++) {
-            if (strs[i][0] != first_letter) {
-                return "";
-            }
+        if (strs.empty()) {
+            return "";
         }
-        std::string longest_prefix = "";
+
+        std::string prefix = strs[0];
+
         for (int i = 0; i < strs.size(); i ++) {
-            char prefix = strs[0][i];
-            for (int j = 0; j < strs.size(); j ++) {
-                if (strs[i][j] == prefix) {
-                    longest_prefix += prefix;
-                }
+            int j = 0;
+            while (j < prefix.length() && j < strs[i].length() && prefix[j] == strs[i][j]) {
+                j ++;
             }
+            prefix = prefix.substr(0, j);
         }
-    return longest_prefix;
+        if (prefix.empty()) {
+            return "";
+        } else {
+            return prefix;
+        }
     }
 };
