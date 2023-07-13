@@ -4,17 +4,32 @@
 class Solution {
 public:
     string intToRoman(int num) {
-
+        
         std::string number_string = std::to_string(num);
+        int number_length = number_string.length();
+        int number_array[number_length];
 
-        std::vector<char> digit_chars;
-
-        for (char digit : number_string) {
-            digit_chars.push_back(digit);
+        for (int i = 0; i < number_length; i ++) {
+            char number_char = number_string[i];
+            int number = static_cast<int>(number_char);
+            number_array[i] = number;
         }
 
-        // for (std::string digit : digit_chars) {
-        //     int digit = digit -'0';
+        for (int i = 0; i < number_length; i ++) {
+            std::cout << number_array[i] << std:: endl;
+        }
+
+        // for (char digit : number_string) {
+        //     digit_chars.push_back(digit);
+        //     std::cout << digit << std::endl;
+        // }
+        // for (char digit : digit_chars) {
+        //     digit = static_cast<int>(digit);
+        //     digit = digit - '0';
+        // }
+
+        // for (int digit : digit_chars) {
+        //     std::cout << digit << std::endl;
         // }
 
         // std::map<int, std::string> int_numeral_map;
