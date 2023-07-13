@@ -16,9 +16,6 @@ public:
             number_array[i] = number;
         }
 
-
-        COMMIT
-
         std::map<int, char> int_numeral_map;
 
         int_numeral_map[1] = 'I';
