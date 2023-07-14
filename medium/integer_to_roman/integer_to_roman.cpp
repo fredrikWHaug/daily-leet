@@ -17,10 +17,6 @@ public:
             number_array[i] = number;
         }
 
-        for (int i = 0; i < number_length; i ++) {
-            std::cout << number_array[i] << std::endl;
-        }
-
         std::map<int, char> int_numeral_map;
 
         int_numeral_map[1] = 'I';
@@ -31,15 +27,26 @@ public:
         int_numeral_map[500] = 'D';
         int_numeral_map[1000] = 'M';
 
-        // I just realized how I am supposed to solve the array placement 
-        // and value accordingly problem: exponentiate 10 to the length of the list
-        // -1 to get the multiple of 10 I want to multiply the list item with for its 
-        // roman numeral value.
+        [2, 4, 5, 9]
+
+        int exponentiation = number_length - 1;
         std::vector<char> roman_numerals;
         for (int i = 0; i < number_length; i ++) {
-            if (number_array[i] <= 5 && number_array[i] >= 1) {
-                for (int j = 0; j < number_array[i]; j ++) {
-                    roman_numerals.push_back(int_numeral_map[1]);
+            number_array[i] = number_array[i]*pow(10, exponentiation); 
+            if (number_array[i] >= 1 && number_array[i] < 5) {
+                
+            } else if (number_array[i] >= 5 && number_array[i] < 10) {
+
+            } else if (number_array[i] >= 10 && number_array[i] < 50) {
+
+            } else if (number_array[i] >= 50 && number_array[i] < 100) {
+
+            } else if (number_array[i] >= 100 && number_array[i] < 500) {
+                
+            } else if (number_array[i] >= 500 && number_array[i] < 1000) {
+
+            } else {
+                
             }
         }
         std::string result;
