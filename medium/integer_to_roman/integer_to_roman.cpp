@@ -29,6 +29,8 @@ public:
 
         int exponentiation = number_length - 1;
         std::vector<char> roman_numerals;
+
+        // I think this is actually very stupid
         for (int i = 0; i < number_length; i ++) {
             int power = number_array[i]*pow(10, exponentiation); 
             if (power >= 1 && power < 5) {
