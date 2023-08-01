@@ -4,9 +4,13 @@ public:
         int return_value;
         for (int i = 0; i < nums.size(); i ++) {
             if (nums[i] == target) {
-                return_value = i;
+                return i;
+            } else if (target < nums[i]) {
+                return i;
+            } else {
+                return nums.size();
             }
         }
-        return return_value;
+        return 0;
     }
 };
