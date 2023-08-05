@@ -2,18 +2,19 @@
 class Solution {
 public:
     vector<int> plusOne(vector<int>& digits) {
-        // make exponent for tenths place
-        int exponent = digits.size() - 1;
-
-        int total_value = 0;
-        for (int i = 0; i < digits.size(); i ++) {
-            digit += digits[i]*pow(10, exponent);
-            exponent --;
+        int n = digits.size();
+        for (int i = n-1; i >= 0; i --) {
+            if (i == n-1) {
+                digits[i] ++;
+            } else if (digits[i] == 10) {
+                digits[i] = 0;
+            } else if (i!= 0) {
+                digits[i-1] ++;
+            } else {
+                digits.push_back(0);
+                digits[i] = 1;
+            }
         }
-        int new_total_value = digit + 1;
-        // invariant: new_total_value is the total value we want
-
-        std::cout << new_digit << std::endl;
         return digits;
     }
 };
