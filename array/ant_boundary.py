@@ -13,4 +13,3 @@ class Solution(object):
             if boundary_check == 0:
                 boundary_counter += 1
         return boundary_counter
-        # just cheking the git commit
