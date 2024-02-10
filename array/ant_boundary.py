@@ -5,9 +5,11 @@ class Solution(object):
         :rtype: int
         """
         pos = 0
-        boundary_hits = 0
+        boundary_check = None
+        boundary_counter = 0
         for i in range(len(nums)):
             pos += i
-            if pos == 0:
-                boundary_hits += 1
-        return boundary_hits
+            boundary_check = pos
+            if boundary_check == 0:
+                boundary_counter += 1
+        return boundary_counter
