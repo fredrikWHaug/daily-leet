@@ -1,6 +1,6 @@
 # daily-leet
 My daily effort to practice algorithmic thinking.
 
-I spend fifteen minutes every morning trying to solve a leet code problem and keep my progress in this repository. I also keep track of my weekly LeetCode contest submissions in this repository.
+I spend roughly 10 minutes per day trying to solve a leetcode problem aligned with the map outlined by NeetCode (https://www.youtube.com/watch?v=jgQjes7MgTM&t=78s).
 
-I am currently a beginner.
+I just keep all the code I write for the problems in this repository.
